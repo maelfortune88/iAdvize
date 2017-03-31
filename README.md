@@ -19,6 +19,8 @@ $app['db.options'] = array(
     'password' => '',
 );
 
+La structure de la BDD se trouve dans "db/posts.sql".
+
 Vous devez utiliser GIT pour versionner vos fichiers --> OK
 
 Vous devez utiliser Composer  pour gérer vos dépendances --> OK
@@ -29,12 +31,12 @@ Vous devez mettre à disposition votre code via Github --> OK
 
 Vous ne devez pas utiliser l’API du site “Vie de Merde” pour récuperer les informations --> Utilisation d'un parser HTML afin de récupérer les entrées voulues.
 
-La description fonctionnelle via BeHat serait un plus --> QuickStart rélisé sur http://behat.org avec la création de basket.feature, Basket.php, Shelf.php, FeatureContext.php.
+La description fonctionnelle via BeHat serait un plus --> QuickStart rélisé sur http://behat.org avec la création de basket.feature, Basket.php, Shelf.php, FeatureContext.php (vendor/bin/features).
 
 Problèmes rencontrés :
 
 1. Lors du parsing HTML, sur une même page (ex : http://www.viedemerde.fr/?page=1), le nombre d'objets "content" récupérés n'était pas le même que celui de "date" et "author". Il en résulte des valeurs nulles par endroits.
 
-2. Le format de date sur le site était en français "non standard" pour ^tre reconnu tel quel par la fonction strtotime. Il aurait fallu modifier la locale de la date PHP pour qu'elle soit reconnue et ensuite convertir le timestamp dans le format "Y-m-d H:i:s".
+2. Le format de date sur le site était en français "non standard" pour être reconnu tel quel par la fonction strtotime. Il aurait fallu modifier la locale de la date PHP pour qu'elle soit reconnue et ensuite convertir le timestamp dans le format "Y-m-d H:i:s".
 
 3. Problème d'encodage de caractères par moment au niveau du contenu du post.
